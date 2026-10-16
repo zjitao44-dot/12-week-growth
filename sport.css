@@ -1,0 +1,252 @@
+/* 12W SPORT — mobile-first premium sports UI refresh. No remote fonts/assets. */
+:root{--bg:#09151b;--surface:#14232a;--ink:#eaf4f1;--muted:#8fa5a7;--line:#2a4045;--teal:#b8f474;--teal-2:#75dfbc;--deep:#0a151b;--mint:#1c3834;--soft:#13252c;--orange:#e6b070;--shadow:0 20px 42px rgba(0,0,0,.14);--r:22px}
+html{background:#09151b;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Inter,"SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;font-size:14px;letter-spacing:.005em}
+::selection{background:#b8f474;color:#081817}
+.icon-sprite{position:absolute;width:0;height:0;overflow:hidden}
+.ui-icon{width:20px;height:20px;display:inline-block;vertical-align:middle;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linejoin:round;stroke-linecap:round;flex:none}
+.icon-big{width:44px;height:44px;color:#b8f474;stroke-width:1.3}
+.shell{background:radial-gradient(ellipse at 80% -28%,rgba(70,140,112,.12),transparent 56%),#09151b}
+.sidebar{background:#0d1d24;border-right:1px solid #24393f;box-shadow:none}
+.logo-top{color:#90b8ae;letter-spacing:1.1px}
+.mini-chip{background:#183a35;color:#c9edca}
+.brand{font-size:27px!important;font-style:italic;letter-spacing:-1.3px!important;line-height:1.15}
+.brand-accent{color:#b8f474}
+.brand small{font-style:normal;letter-spacing:2px!important;color:#7ba7a3!important;margin-top:9px!important}
+.date-caption{color:#799b9b}
+.nav-btn{color:#9db3b6!important;background:transparent!important;transition:background .18s,color .18s}
+.nav-btn:hover{color:#eaffeb!important;background:#1a3236!important}
+.nav-btn.active{background:#b8f474!important;color:#102321!important}
+.nav-icon{width:23px!important;display:flex;align-items:center;justify-content:center;font-size:20px!important}
+.sidebar-bottom{border-top:1px solid #2a3c42;color:#abc4ba}
+.sidebar-bottom strong{color:#b8f474}
+.side-bar{background:#294d46}
+.side-bar div{background:#b8f474}
+.main{max-width:1540px;padding-top:42px}
+.eyebrow{color:#a2dba9;letter-spacing:1.8px}
+.topline h1{color:#f4fbf8;font-weight:850;font-size:clamp(27px,2.7vw,38px);letter-spacing:-1.5px}
+.subhead{color:#89a4a5}
+.date-field,.arrow,.btn,.pill-btn{border:1px solid #355056;background:#192d34;color:#d9ece5;border-radius:14px}
+.arrow:hover,.btn:hover{border-color:#8baea1;background:#203841}
+.btn-primary{background:#b8f474!important;color:#102019!important;border-color:#b8f474!important;font-weight:800}
+.btn-primary:hover{background:#d0ff94!important;border-color:#d0ff94!important;color:#0c2115!important}
+.btn-danger{color:#f19b9b;border-color:#7f4343;background:#362328}
+.btn-ghost{background:transparent!important;color:#b6cfc6!important;border:1px solid #375055!important}
+.panel,.metric{background:#13232b;border:1px solid #273e43;box-shadow:none;color:var(--ink)}
+.panel-inner{padding:25px}
+.panel-heading{margin-bottom:18px}
+.card-title{font-size:18px;color:#ecf6f3;letter-spacing:-.5px}
+.card-sub,.small-muted{color:#8fa4a6}
+.hero{background:linear-gradient(115deg,#183837 2%,#11302f 46%,#0a252c 100%);border:1px solid #315b4d;border-radius:25px;box-shadow:0 16px 32px #040d1040}
+.hero:before{border-color:#80e0a830;box-shadow:0 0 0 58px #b7f47406,0 0 0 116px #b7f47405}
+.hero-tag{color:#b8f474;letter-spacing:1.8px}
+.hero h2{color:#fff;font-weight:850;letter-spacing:-.7px}
+.hero p{color:#bad4cc}
+.hero-num strong{color:#c7f598;font-weight:900}
+.hero-num span{color:#aacac3}
+.metrics{gap:13px}
+.metric{background:linear-gradient(135deg,#152930,#112127);border-color:#2a4046;min-height:143px}
+.metric-label{color:#9eb6b6}
+.metric-value{color:#f6fffc;font-size:30px}
+.metric-value span{color:#a3c6af}
+.metric-hint{color:#809a9d}
+.pill{background:#1c3931;color:#c0f38c}
+.pill.gray{background:#24353c;color:#acc0c1}
+.pill.amber{background:#4b3928;color:#f2c687}
+.divider{background:#2b4145}
+.list-row{border-color:#283d41}
+.row-name,.row-hint{color:#eaf4f0}
+.row-hint{color:#849fa1!important}
+.check{accent-color:#a7e768}
+.weekday{background:#1a3338!important;border:1px solid #2b4a4c!important}
+.weekday.today{border-color:#b8f474!important;background:#284039!important}
+.weekday b{color:#e2f4ea}.weekday small{color:#9cb8b4}
+.weekday .dot{background:#355857}.weekday .dot.on{background:#b8f474}
+.progress-track{background:#304647}
+.progress-track>div{background:linear-gradient(90deg,#83dba4,#bef47b)}
+.notice{background:#17332e;border-color:#8adbb0;color:#bbdacf}
+.notice.warning{background:#3f3026;border-color:#edb375;color:#f0cfb0}
+.form-group label{color:#b5cfc7}
+.form-group input,.form-group textarea,.form-group select,.date-field{background:#0e1d24;color:#edf8f1;border:1px solid #335059;border-radius:12px;min-height:43px}
+.form-group input::placeholder,.form-group textarea::placeholder{color:#668488}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:#b8f474;box-shadow:0 0 0 2px #b8f47422}
+.form-group .unit:after{color:#8daaa8}
+.check-card{background:#122a2d;border-color:#294449}
+.check-card:has(input:checked){background:#234136;border-color:#69a67f}
+.check-card span{color:#ecf8f0}
+.check-card small{color:#9db8b4}
+.learn-week{background:#152b30;border-color:#335056;color:#ebf7f4}
+.learn-week.active{background:#244536;border-color:#9de67b}
+.learn-week.done{border-color:#619b81}
+.learn-week h3{color:#f1f9f6}.learn-week p{color:#92acaa}
+.learn-week .wk{color:#b8f474}
+.learning-feature{background:#1b3837}
+.learning-feature .week-tile{background:#b8f474;color:#11251f}
+.learning-feature .week-tile small{color:#325a3c}
+.goal-area{background:#13272b;border-color:#294a49}
+.table-wrap{border-color:#30474b}
+table{background:#10232b;color:#d8ede8}th{background:#24453f;color:#c9f3d3}td{border-color:#2b4447}
+tbody tr:nth-child(even){background:#173035}
+.chart{background:transparent}
+.legend{color:#afc7bb}.legend:before{background:#b8f474}
+.backup-card{background:#13272c;border-color:#304b4c}
+.backup-card h3{color:#e8f5ed}.backup-card p{color:#97b2b1}
+.hintline{color:#a9c5c1}.hintline:before{border-color:#55786f;color:#b8f474}
+.empty{border-color:#3a5356;color:#8ca7a5}
+.workout-summary{background:#1e382f;color:#c8e8d0}
+.workout-summary b{color:#c1eea2}
+.exercise{background:#12242c;border-color:#31494b}
+.exercise-head{background:#1b3637}.exercise-target{color:#afcbc4}.exercise-title{color:#f4f8f4}
+.set{background:#112830;border-color:#39504f}.set.completed{border-color:#a6e57f;background:#253d30}
+.set-fields label{color:#8fa8a5}.set-fields input,.exercise-footer input{background:#0b1d22;color:#eaf5f0;border-color:#385556}
+.status-line{color:#b8f474}
+.score-box b{color:#f1f9f6}.donut{background:conic-gradient(#b8f474 var(--p),#2c4342 0)}.donut>div{background:#14262c}.donut strong{color:#e4f9df}.donut small{color:#acc4b9}
+.footer{color:#6d8d8c;letter-spacing:1.2px}
+.toast{background:#bbf079;color:#153128;box-shadow:0 12px 27px #0006;font-weight:700}
+.streak-bar{background:linear-gradient(100deg,#23432f,#153530)!important;border:1px solid #5b956e!important;color:#eafadd!important}
+.streak-bar b{color:#e9fbd7}.streak-bar small{color:#a4c9b0}.streak-link{background:#b8f474!important;color:#132d25!important;border:0!important}
+.day-finish{background:#1b3430!important;border:1px solid #416f54!important;color:#e7f7ee!important}
+.day-finish.is-done{background:#284a36!important;border-color:#a4da86!important}
+.day-finish p{color:#9bb7ab!important}
+.finish-label{color:#eaf7dd!important}
+.cal-week{background:#122930!important;border-color:#304b4d!important}
+.cal-week-head b{color:#eaf6f4!important}.cal-week-head span,.cal-week-head small{color:#9bbab6!important}
+.cal-day{background:#172f34!important;color:#c8dfda!important;border-color:#30494c!important}
+.cal-day.is-selected{border-color:#c4f481!important;box-shadow:0 0 0 1px #c4f48180 inset!important}
+.cal-day.is-today{outline-color:#8bddb0!important}
+.cal-day.is-complete{background:#315337!important;border-color:#80c981!important;color:#eaffd3!important}
+.cal-day.is-partial{background:#24423f!important;border-color:#4f8f85!important}
+.cal-key{color:#9fc0b4}
+.more-tile{background:#152c32!important;border-color:#2e5051!important;color:#e5f5f0!important}
+.more-tile small{color:#9cb8b3!important}.more-tile .more-arrow,.more-symbol{color:#b8f474!important}
+.install-card{background:#1e3430!important;border:1px solid #3c6853!important;color:#d9f5e1!important}
+.install-card p{color:#abcbbc!important}
+/* --- Training UI --- */
+.workout-hero{min-height:205px;background:radial-gradient(circle at 85% 65%,rgba(183,244,116,.11),transparent 43%),linear-gradient(120deg,#203f36,#11302f 58%,#0b252b)}
+.workout-hero h2{font-size:clamp(28px,3.3vw,40px);letter-spacing:-1px;text-transform:uppercase}
+.hero-title-sep{color:#a1c5ab;font-weight:400;margin:0 4px}
+.workout-hero .hero-num strong{font-size:72px;line-height:1;color:#b8f474;font-style:italic}
+.workout-hero .hero-num span{font-weight:800;letter-spacing:3px}
+.workout-hero-progress{display:flex;align-items:center;gap:18px;font-size:12px;color:#d5f0d1;margin-top:22px}
+.workout-track{height:7px;border-radius:20px;background:#ffffff20;overflow:hidden;width:190px}
+.workout-track i{height:100%;background:#b8f474;display:block;border-radius:20px;transition:width .25s}
+.rest-workout{background:linear-gradient(115deg,#193336,#15343b)}
+.training-head{margin-bottom:23px;padding-bottom:18px}
+.program-switch{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.program-chip{background:#0f2329;color:#b5cbc5;border:1px solid #335354;border-radius:14px;padding:12px 12px 13px;text-align:left;min-width:0;transition:all .18s}
+.program-chip:hover{border-color:#a5d68b;background:#19362f}
+.program-chip.selected{background:#b8f474;border-color:#b8f474;color:#0f261a;box-shadow:0 0 0 1px #b8f47433}
+.program-chip span{font-size:10px;display:block;letter-spacing:1.6px;font-weight:900;opacity:.8}
+.program-chip strong{font-size:14px;display:block;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.training-note{margin:14px 2px 0}
+.training-quick-actions{margin-top:14px}.program-heading{font-size:13px;color:#c0dacd;margin-bottom:10px}
+.exercise-collection-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:30px 0 15px}
+.exercise-collection-head>div>span{color:#b8f474;font-size:10px;letter-spacing:2.2px;font-weight:800}
+.exercise-collection-head h2{color:#f6faf7;margin:4px 0 0;font-size:22px;font-weight:850;letter-spacing:-1px}
+.exercise-collection-head h2 small{color:#8cb6ab;font-size:12px;font-weight:500;margin-left:8px}
+.bilibili-brand{color:#a9c3bd;font-size:12px;display:flex;align-items:center;gap:6px}
+.bilibili-brand .ui-icon{width:17px;height:17px;color:#b8f474}
+.pro-exercises{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-bottom:25px}
+.pro-exercise{min-width:0;overflow:hidden;border:1px solid #2d474a;border-radius:21px;background:#12262d;box-shadow:0 14px 30px #00000020}
+.exercise-cover{height:217px;display:block;position:relative;overflow:hidden;background:#182f32;color:#e8f8e8}
+.exercise-cover img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .35s ease,filter .35s ease}
+.exercise-cover:hover img{transform:scale(1.035);filter:brightness(1.07)}
+.exercise-cover:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#07151abe,transparent 54%);pointer-events:none}
+.exercise-cover-top,.exercise-cover-bottom{position:absolute;z-index:1;font-weight:750}
+.exercise-cover-top{left:16px;top:15px;font-size:10px;letter-spacing:1.1px;padding:6px 10px;background:#092222d9;color:#d5f3ca;border:1px solid #548470;border-radius:99px}
+.exercise-cover-bottom{left:18px;bottom:17px;color:#f2fff1;font-size:13px}
+.exercise-cover-play{width:55px;height:55px;border-radius:50%;background:#b8f474;color:#133024;position:absolute;z-index:2;top:50%;left:50%;transform:translate(-50%,-50%);display:grid;place-items:center;box-shadow:0 9px 29px #0008;transition:transform .2s}
+.exercise-cover-play .ui-icon{width:25px;height:25px}
+.exercise-cover:hover .exercise-cover-play{transform:translate(-50%,-50%) scale(1.1)}
+.exercise-body{padding:20px 20px 22px}
+.exercise-index{display:flex;justify-content:space-between;gap:8px;align-items:center;color:#94bbaa;font-size:11px;letter-spacing:1.5px;font-weight:800}
+.set-status{font-size:10px;white-space:nowrap;background:#223d39;padding:5px 9px;border:1px solid #39594a;border-radius:99px;color:#b9e6b4}
+.exercise-name-row{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin:8px 0 4px}
+.exercise-name-row h3{font-size:21px;font-weight:850;letter-spacing:-.45px;margin:0;color:#f4fffa}
+.english-name{font-size:10px;letter-spacing:1.1px;color:#8cafaa;margin:4px 0}
+.target-badge{background:#b8f474;color:#102719;white-space:nowrap;padding:5px 8px;border-radius:8px;font-size:12px;font-weight:850;margin-top:2px}
+.muscle-line{font-size:12px;color:#acc6be;margin:12px 0}
+.exercise-actions{display:flex;gap:8px;margin:15px 0}
+.vid-button,.edit-video-btn{display:inline-flex;justify-content:center;align-items:center;gap:6px;border:1px solid #3e5a58;border-radius:12px;padding:10px 12px;min-height:41px;font-size:12px;font-weight:780;text-decoration:none;white-space:nowrap}
+.vid-button{background:#b8f474;color:#0d2519;border-color:#b8f474;flex:1}
+.edit-video-btn{background:#1b3439;color:#d0e7df;cursor:pointer}
+.vid-button .ui-icon,.edit-video-btn .ui-icon{width:17px;height:17px}
+.vid-button:hover{color:#0d2519;background:#ceff91}.edit-video-btn:hover{background:#264147}
+.motion-guide{margin:13px 0 19px;border:1px solid #304b4a;background:#152e30;border-radius:13px;overflow:hidden}
+.motion-guide summary{cursor:pointer;list-style:none;padding:11px 13px;color:#bce9a2;font-weight:740;font-size:12px;display:flex;justify-content:space-between;align-items:center}
+.motion-guide summary::-webkit-details-marker{display:none}
+.motion-guide[open] summary span{transform:rotate(180deg)}
+.motion-guide ul{padding:0 15px 0 29px;color:#cadcd3;margin:5px 0 9px;font-size:12px;line-height:1.85}
+.avoid-note{color:#dfb98d;border-top:1px solid #38524c;margin:9px 13px 12px;padding-top:9px;font-size:12px}
+.sets-header{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:16px 0 9px;color:#c5e2ca;font-size:11px;letter-spacing:.5px;font-weight:760}
+.sets-header span:last-child{color:#87a7a4;font-size:10px;font-weight:500}
+.sets-pro{display:grid;gap:7px}
+.new-set-row{display:grid;grid-template-columns:36px minmax(0,1fr) minmax(0,1fr) 54px;gap:8px;align-items:center;padding:9px 10px;border:1px solid #334b4e;background:#0d2027;border-radius:13px;min-width:0;transition:background .16s}
+.new-set-row.is-done{background:#223d32;border-color:#71a670}
+.set-number{font-size:14px;color:#83b4a1;font-weight:850;text-align:center}
+.mini-input{display:block;min-width:0}
+.mini-input span{display:block;margin-bottom:3px;font-size:10px;color:#82a3a3}
+.mini-input input{font-size:16px;color:#f2fff9;font-weight:780;padding:7px 10px;width:100%;min-width:0;height:37px;box-sizing:border-box;border-radius:9px;border:1px solid #375156;background:#172e35;text-align:center}
+.mini-input input::placeholder{color:#637f80}
+.mini-input input:focus{border-color:#b8f474;outline:none}
+.set-finish{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;color:#809f9f;font-size:10px}
+.set-finish input{position:absolute;opacity:0;width:1px;height:1px}
+.set-finish>span{width:31px;height:31px;border-radius:9px;border:1.5px solid #526f6b;background:#1a3639;color:#658a86;display:grid;place-items:center;font-size:16px;font-weight:900}
+.set-finish input:checked+span{background:#b8f474;border-color:#b8f474;color:#16301b}
+.set-finish input:focus-visible+span{outline:2px solid #b8f474;outline-offset:2px}
+.set-finish small{font-size:10px}
+.exercise-bottom{display:flex;align-items:center;gap:14px;flex-wrap:wrap;border-top:1px solid #30464b;margin-top:14px;padding-top:12px;font-size:11px;color:#98b1af}
+.exercise-bottom label{display:flex;align-items:center;gap:8px;font-weight:750;color:#b8d0c7}
+.exercise-bottom input{width:59px;border:1px solid #43605e;background:#0d2229;border-radius:9px;padding:6px 8px;color:#e6f9f0;text-align:center;font-size:16px}
+.session-end{margin-top:25px;margin-bottom:36px}
+.session-end .form-grid{margin:22px 0}
+.finish-training{display:block;margin-top:18px;width:100%;padding:15px}
+/* Video editor dialog */
+.video-dialog{color:#e9f7f0;border:1px solid #45675c;background:linear-gradient(145deg,#1b3834,#101e27);width:min(520px,calc(100vw - 24px));max-height:calc(100dvh - 40px);overflow-y:auto;border-radius:24px;box-shadow:0 30px 80px #000c;padding:25px}
+.video-dialog::backdrop{background:#061016d9;backdrop-filter:blur(5px)}
+.video-dialog-bar{display:flex;justify-content:space-between;align-items:start;gap:12px;margin-bottom:16px}
+.video-dialog-bar small{color:#b8f474;letter-spacing:1.4px;font-size:10px;font-weight:800}
+.video-dialog h2{font-size:21px;margin:5px 0 0;letter-spacing:-.5px}
+.video-close{background:#294643;border:0;color:#d8eadd;border-radius:10px;width:34px;height:34px;font-size:25px;cursor:pointer}
+.video-dialog-note,.video-dialog-hint{color:#a6c1b6;font-size:12px;line-height:1.8;margin-bottom:21px}
+.video-dialog .form-group{margin:15px 0}
+.video-dialog .form-group input{font-size:16px;line-height:1.3}
+.video-dialog-actions{display:flex;justify-content:space-between;gap:12px;margin-top:18px}
+.video-dialog-actions .btn{flex:1}
+/* visuals and bottom nav */
+.bottom-nav{background:#0e2027f7!important;border-top:1px solid #3a5856!important;box-shadow:0 -10px 35px #0005;backdrop-filter:blur(20px)}
+.dock-btn{color:#91aaaa!important}
+.dock-btn.active{background:#b8f474!important;color:#112818!important}
+.dock-btn .nav-icon{width:auto!important}
+.dock-btn .ui-icon{width:22px;height:22px}
+.dock-btn.active .ui-icon{stroke-width:2.25}
+/* responsive tuning */
+@media(min-width:1180px){.pro-exercises{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:1199px){.pro-exercises{grid-template-columns:1fr 1fr}}
+@media(max-width:940px){.pro-exercises{grid-template-columns:1fr}.exercise-cover{height:230px}}
+@media(max-width:720px){
+ body{font-size:14px}.main{padding:19px 14px calc(112px + env(safe-area-inset-bottom,0px))}
+ .sidebar{padding:12px 14px 10px;background:#0c1d23;border-bottom:1px solid #234246}
+ .sidebar .brand{font-size:20px!important;margin:1px 0}.sidebar .brand small{display:none}
+ .sidebar .nav{display:none!important}
+ .topline{margin-bottom:17px}.topline h1{font-size:26px;margin:5px 0 7px}
+ .top-right{gap:7px;margin-top:15px}.date-field{max-width:150px;font-size:14px}
+ .hero{padding:20px 19px;border-radius:22px}.hero h2{font-size:23px}
+ .metric{min-height:119px}.metric-value{font-size:27px}
+ .panel-inner{padding:17px}.card-title{font-size:17px}
+ .workout-hero h2{font-size:26px;line-height:1.32}.workout-hero .hero-num strong{font-size:46px}
+ .workout-hero-progress{flex-wrap:wrap;gap:9px;margin-top:12px}.workout-track{width:150px}
+ .program-switch{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .pro-exercises{grid-template-columns:1fr;gap:15px}
+ .exercise-cover{height:auto;aspect-ratio:760/424}
+ .exercise-body{padding:17px 14px 18px}
+ .exercise-name-row h3{font-size:20px}
+ .exercise-actions{gap:7px}.vid-button,.edit-video-btn{padding:10px 9px}
+ .exercise-collection-head h2{font-size:21px}
+ .new-set-row{grid-template-columns:30px minmax(0,1fr) minmax(0,1fr) 44px;gap:6px;padding:8px 6px}
+ .set-number{font-size:12px}.set-finish>span{width:29px;height:29px}
+ .mini-input input{padding:6px 4px}
+ .video-dialog{padding:20px 17px}
+}
+@media(max-width:359px){.workout-hero .hero-num{display:none}.exercise-name-row h3{font-size:18px}.target-badge{font-size:10px}.exercise-index{font-size:10px}.exercise-actions{flex-wrap:wrap}.vid-button,.edit-video-btn{flex:1}.new-set-row{grid-template-columns:26px minmax(0,1fr) minmax(0,1fr) 42px}.sets-header span:last-child{display:none}}
+@media(prefers-reduced-motion:reduce){.exercise-cover img,.exercise-cover-play{transition:none!important}}

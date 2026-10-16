@@ -1,25 +1,50 @@
-/* Cache only static app-shell files. Fitness/health records stay in IndexedDB/localStorage. */
-const CACHE = 'rebuild12-pwa-shell-v4';
-const ASSETS = ['./','./index.html','./styles.css','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png','./icons/maskable-512.png','./icons/apple-touch-icon.png'];
-self.addEventListener('install', event => {
-  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
-});
-self.addEventListener('activate', event => {
-  event.waitUntil(Promise.all([caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))),self.clients.claim()]));
-});
-self.addEventListener('fetch', event => {
-  const url=new URL(event.request.url);
-  if (event.request.method !== 'GET' || url.origin !== self.location.origin) return;
-  event.respondWith(caches.match(event.request,{ignoreSearch:true}).then(cached => {
-    if (cached) return cached;
-    return fetch(event.request).then(response => {
-      if (response.ok && url.pathname.startsWith(new URL(self.registration.scope).pathname)) {
-        const copy=response.clone();caches.open(CACHE).then(cache=>cache.put(event.request,copy));
-      }
-      return response;
-    }).catch(async () => {
-      if(event.request.mode === 'navigate')return caches.match('./index.html');
-      return Response.error();
-    });
-  }));
+/* 12W SPORT PWA: cache app shell, not user health records. */
+const PREFIX = 'rebuild12-pwa-';
+const CACHE = PREFIX+'sport-v2-20261016';
+const ASSETS = [
+  "./",
+  "./index.html",
+  "./styles.css",
+  "./sport.css",
+  "./manifest.webmanifest",
+  "./icons/icon-192.png",
+  "./icons/icon-512.png",
+  "./icons/maskable-512.png",
+  "./icons/apple-touch-icon.png",
+  "./covers/flat.svg",
+  "./covers/incline.svg",
+  "./covers/fly.svg",
+  "./covers/push.svg",
+  "./covers/over.svg",
+  "./covers/pulldown.svg",
+  "./covers/row.svg",
+  "./covers/cable.svg",
+  "./covers/rear.svg",
+  "./covers/curl.svg",
+  "./covers/hammer.svg",
+  "./covers/squat.svg",
+  "./covers/rdl.svg",
+  "./covers/split.svg",
+  "./covers/legcurl.svg",
+  "./covers/hip.svg",
+  "./covers/calf.svg",
+  "./covers/press.svg",
+  "./covers/lateral.svg",
+  "./covers/latcable.svg",
+  "./covers/rear2.svg",
+  "./covers/abs.svg",
+  "./covers/plank.svg"
+];
+self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting()))});
+self.addEventListener('activate',event=>{event.waitUntil(Promise.all([caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith(PREFIX)&&k!==CACHE).map(k=>caches.delete(k)))),self.clients.claim()]))});
+self.addEventListener('fetch',event=>{
+ const req=event.request,url=new URL(req.url);
+ if(req.method!=='GET'||url.origin!==self.location.origin)return;
+ const scope=new URL(self.registration.scope);
+ if(!url.pathname.startsWith(scope.pathname))return;
+ if(req.mode==='navigate'){
+  event.respondWith(fetch(req).then(res=>{if(res.ok){const copy=res.clone();event.waitUntil(caches.open(CACHE).then(cache=>cache.put(req,copy)))}return res}).catch(()=>caches.match(req,{ignoreSearch:true}).then(r=>r||caches.match('./index.html'))));return;
+ }
+ const staticCover=url.pathname.includes('/covers/')||url.pathname.includes('/icons/');
+ event.respondWith(staticCover?caches.match(req).then(hit=>hit||fetch(req).then(res=>{if(res.ok){const copy=res.clone();event.waitUntil(caches.open(CACHE).then(c=>c.put(req,copy)))}return res})):fetch(req).then(res=>{if(res.ok){const copy=res.clone();event.waitUntil(caches.open(CACHE).then(c=>c.put(req,copy)))}return res}).catch(()=>caches.match(req)));
 });
