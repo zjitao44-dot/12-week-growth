@@ -1,5 +1,5 @@
 /* Cache only static app-shell files. Fitness/health records stay in IndexedDB/localStorage. */
-const CACHE = 'rebuild12-pwa-shell-v3';
+const CACHE = 'rebuild12-pwa-shell-v4';
 const ASSETS = ['./','./index.html','./styles.css','./manifest.webmanifest','./icons/icon-192.png','./icons/icon-512.png','./icons/maskable-512.png','./icons/apple-touch-icon.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
