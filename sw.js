@@ -1,11 +1,13 @@
 /* 12W SPORT PWA: cache app shell, not user health records. */
-const PREFIX = 'rebuild12-pwa-';
-const CACHE = PREFIX+'sport-v2-20261016';
+const PREFIX = 'rebuild12-v3merge-preview-';
+const CACHE = PREFIX+'sport-v3merge-preview-20261016';
 const ASSETS = [
   "./",
   "./index.html",
   "./styles.css",
   "./sport.css",
+  "./v3-addon.css",
+  "./v3-addon.js",
   "./manifest.webmanifest",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
